@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>笔记本 · zhangWeb</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="site-name">zhangWeb</a>
+      <div class="nav-links">
+        <a href="index.html">🏠 首页</a>
+        <a href="notes.html">📝 笔记本</a>
+        <a href="music.html">🎵 音乐</a>
+        <a href="video.html">🎬 视频</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="notes-layout">
+      <aside class="notes-sidebar">
+        <div class="card">
+          <button id="new-note-btn" class="btn secondary" style="width:100%; margin-bottom:12px;">＋ 新建笔记</button>
+          <div id="note-list"></div>
+        </div>
+      </aside>
+
+      <section class="card note-editor">
+        <div class="editor-toolbar">
+          <input id="note-title" class="note-title-input" type="text" placeholder="笔记标题" />
+          <button id="delete-note-btn" class="btn ghost" title="删除当前笔记">🗑 删除</button>
+        </div>
+
+        <div class="color-panel" id="color-panel">
+          <span class="panel-label">🎨 文字颜色：</span>
+          <!-- 色块由 notes.js 生成 -->
+          <input type="color" id="custom-color" class="color-custom" value="#4a90d9" title="自定义颜色" />
+          <span id="save-status" class="save-status">已保存</span>
+        </div>
+
+        <div id="note-content" class="note-content" contenteditable="true" data-placeholder="在这里开始写笔记… 选中文本后点击色块即可改变文字颜色"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer>© 2026 zhang0 · zhangWeb</footer>
+  <script src="js/main.js"></script>
+  <script src="js/notes.js"></script>
+</body>
+</html>
