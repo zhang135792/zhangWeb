@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>音乐 · zhangWeb</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="site-name">zhangWeb</a>
+      <div class="nav-links">
+        <a href="index.html">🏠 首页</a>
+        <a href="notes.html">📝 笔记本</a>
+        <a href="music.html">🎵 音乐</a>
+        <a href="video.html">🎬 视频</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="media-layout">
+      <section class="card player-area">
+        <div class="now-title" id="now-title">未在播放</div>
+
+        <div class="control-row">
+          <button id="prev-btn" class="btn icon-btn ghost" title="上一首">⏮</button>
+          <button id="play-btn" class="play-btn" title="播放/暂停">▶</button>
+          <button id="next-btn" class="btn icon-btn ghost" title="下一首">⏭</button>
+        </div>
+
+        <div class="progress-row">
+          <span id="cur-time">0:00</span>
+          <input type="range" id="progress" min="0" max="1000" value="0" step="1" />
+          <span id="dur-time">0:00</span>
+        </div>
+
+        <div class="volume-row">
+          <span>🔈</span>
+          <input type="range" id="volume" min="0" max="100" value="80" />
+          <span id="vol-num">80</span>
+        </div>
+
+        <div class="extra-controls">
+          <button id="loop-btn" class="btn secondary">🔁 顺序循环</button>
+          <button id="shuffle-btn" class="btn ghost">🔀 随机</button>
+        </div>
+
+        <audio id="audio"></audio>
+      </section>
+
+      <aside class="card media-list">
+        <h3>🎵 播放列表</h3>
+        <div class="media-toolbar">
+          <button id="add-files-btn" class="btn secondary" style="flex:1;">＋ 添加本地文件</button>
+          <input type="file" id="file-input" accept="audio/*" multiple hidden />
+        </div>
+        <div id="track-list"></div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>© 2026 zhang0 · zhangWeb</footer>
+  <script src="js/main.js"></script>
+  <script src="js/music.js"></script>
+</body>
+</html>
