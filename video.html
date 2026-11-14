@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>视频 · zhangWeb</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="site-name">zhangWeb</a>
+      <div class="nav-links">
+        <a href="index.html">🏠 首页</a>
+        <a href="notes.html">📝 笔记本</a>
+        <a href="music.html">🎵 音乐</a>
+        <a href="video.html">🎬 视频</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="media-layout">
+      <section class="card player-area">
+        <div class="video-frame">
+          <video id="video" controls></video>
+        </div>
+
+        <div class="player-controls">
+          <div class="now-title" id="now-title">未在播放</div>
+          <div class="extra-controls">
+            <button id="speed-btn" class="btn secondary">⏩ 倍速 1.0×</button>
+            <button id="fullscreen-btn" class="btn ghost">⛶ 全屏</button>
+          </div>
+        </div>
+      </section>
+
+      <aside class="card media-list">
+        <h3>🎬 视频列表</h3>
+        <div class="media-toolbar">
+          <button id="add-files-btn" class="btn secondary" style="flex:1;">＋ 添加本地文件</button>
+          <input type="file" id="file-input" accept="video/*" multiple hidden />
+        </div>
+        <div id="video-list"></div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>© 2026 zhang0 · zhangWeb</footer>
+  <script src="js/main.js"></script>
+  <script src="js/video.js"></script>
+</body>
+</html>
